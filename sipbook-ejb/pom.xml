@@ -5,18 +5,18 @@
   xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
 
   <parent>
-    <groupId>de.urb.timesheet</groupId>
-    <artifactId>ejb</artifactId>
-    <version>${version.de.urb.timesheet}</version>
+    <groupId>de.urb.sipbook</groupId>
+    <artifactId>sipbook-project</artifactId>
+    <version>${version.de.urb.sipbook}</version>
   </parent>
 
   <modelVersion>4.0.0</modelVersion>
-  <groupId>de.urb.timesheet</groupId>
-  <artifactId>common-ejb</artifactId>
+  <groupId>de.urb.sipbook</groupId>
+  <artifactId>sipbook-ejb</artifactId>
   <packaging>ejb</packaging>
-  <version>${version.de.urb.timesheet}</version>
-  <name>Timesheet common EJB</name>
-  <description>Timesheet common EJBs</description>
+  <version>${version.de.urb.sipbook}</version>
+  <name>SIPBook simple EJBs</name>
+  <description>SIPBook simple EJBs</description>
 
   <build>
     <plugins>
@@ -65,10 +65,8 @@
     </dependency>
 
     <dependency>
-      <groupId>de.urb.timesheet</groupId>
-      <artifactId>common-types</artifactId>
-      <version>${version.de.urb.timesheet}</version>
-      <scope>provided</scope>
+      <groupId>org.apache.commons</groupId>
+      <artifactId>commons-lang3</artifactId>
     </dependency>
 
     <dependency>
@@ -77,38 +75,10 @@
     </dependency>
 
     <dependency>
-      <groupId>commons-logging</groupId>
-      <artifactId>commons-logging</artifactId>
+      <groupId>de.urb.sipbook</groupId>
+      <artifactId>sipbook-lib</artifactId>
       <scope>provided</scope>
-    </dependency>
-
-<!--
-    <dependency>
-      <groupId>javax</groupId>
-      <artifactId>javaee-api</artifactId>
-      <version>${version.javax.javaee}</version>
-      <scope>provided</scope>
-    </dependency>
-
-    <dependency>
-      <groupId>org.jboss.ejb3</groupId>
-      <artifactId>jboss-ejb3-ext-api</artifactId>
-      <version>${version.jboss.ejb3ext}</version>
-      <scope>provided</scope>
-    </dependency>
-
-    <dependency>
-      <groupId>org.jboss.seam</groupId>
-      <artifactId>jboss-seam</artifactId>
-      <scope>provided</scope>
-      <version>${version.org.jboss.seam}</version>
-    </dependency>
--->
-
-    <dependency>
-      <groupId>javax.enterprise</groupId>
-      <artifactId>cdi-api</artifactId>
-      <scope>provided</scope>
+      <version>${version.de.urb.sipbook}</version>
     </dependency>
 
     <dependency>
@@ -119,14 +89,8 @@
     </dependency>
         
     <dependency>
-      <groupId>org.jboss.spec.javax.annotation</groupId>
-      <artifactId>jboss-annotations-api_1.1_spec</artifactId>
-      <scope>provided</scope>
-    </dependency>
-
-    <dependency>
-      <groupId>org.jboss.spec.javax.ejb</groupId>
-      <artifactId>jboss-ejb-api_3.1_spec</artifactId>
+      <groupId>org.slf4j</groupId>
+      <artifactId>slf4j-api</artifactId>
       <scope>provided</scope>
     </dependency>
 

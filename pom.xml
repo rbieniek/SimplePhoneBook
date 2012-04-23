@@ -1,15 +1,15 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
   <modelVersion>4.0.0</modelVersion>
-  <groupId>de.urb.quagga</groupId>
-  <artifactId>quagga-java</artifactId>
+  <groupId>de.urb.sipbook</groupId>
+  <artifactId>sipbook-project</artifactId>
   <packaging>pom</packaging>
-  <version>${version.de.urb.quagga}</version>
-  <name>BGP4J</name>
-  <description>BGP4 Java implementation</description>
+  <version>${version.de.urb.sipbook}</version>
+  <name>SIPBook</name>
+  <description>Simple SIP Phonebook</description>
 
   <scm>
-    <connection>scm:git:https://rbieniek@github.com/rbieniek/BGP4J.git</connection>
+    <connection>scm:git@github.com:rbieniek/SimplePhoneBook.git</connection>
   </scm>
 
   <developers>  
@@ -117,50 +117,36 @@
   </build>
 
   <properties>
-    <version.commons.beanutils>1.8.3</version.commons.beanutils>
-    <version.commons.cli>1.2</version.commons.cli>
     <version.commons.codec>1.4</version.commons.codec>
-    <version.commons.collections>3.2.1</version.commons.collections>
-    <version.commons.configuration>1.8</version.commons.configuration>
-    <version.commons.digester>1.8.1</version.commons.digester>
-    <version.commons.jxpath>1.3</version.commons.jxpath>
     <version.commons.lang>3.0.1</version.commons.lang>
-    <version.commons.jexl>2.1.1</version.commons.jexl>
-    <version.commons.vfs>2.0</version.commons.vfs>
-    <version.de.urb.quagga>0.1-SNAPSHOT</version.de.urb.quagga>
-    <version.javax.enterprise.cdi-api>1.1.EDR1.2</version.javax.enterprise.cdi-api>
+    <version.de.urb.sipbook>0.1-SNAPSHOT</version.de.urb.sipbook>
     <version.log4j>1.2.16</version.log4j>
+    <version.javax.enterprise.cdi-api>1.1.EDR1.2</version.javax.enterprise.cdi-api>
+    <version.javax.xml.bind>2.2.3</version.javax.xml.bind>
     <version.org.apache.maven.plugins.maven_jar_plugin>2.3.2</version.org.apache.maven.plugins.maven_jar_plugin>
     <version.org.apache.maven.plugins.maven_surefire_plugin>2.11</version.org.apache.maven.plugins.maven_surefire_plugin>
-    <version.org.codehaus.mojo.appassembler_maven_plugin>1.0</version.org.codehaus.mojo.appassembler_maven_plugin>
     <version.org.hibernate.validator>4.2.0.Final</version.org.hibernate.validator>
     <version.org.jboss.arquillian>1.0.0.Alpha5</version.org.jboss.arquillian>
-    <version.io.netty>3.3.1.Final</version.io.netty>
+    <version.org.jboss.resteasy>2.3.1.GA</version.org.jboss.resteasy>
     <version.org.jboss.spec.bom>2.0.0.Final</version.org.jboss.spec.bom>
     <version.org.jboss.weld.api.bom>1.1.Final</version.org.jboss.weld.api.bom>
     <version.org.jboss.weld.core.bom>1.1.4.Final</version.org.jboss.weld.core.bom>
-    <version.org.jboss.weld.se>1.1.4.Final</version.org.jboss.weld.se>
-    <version.org.jboss.weld.spi>1.1.Final</version.org.jboss.weld.spi>
-    <version.org.richfaces.bom>4.0.0.Final</version.org.richfaces.bom>
-    <version.org.seamframework>3.0.0.Final</version.org.seamframework>
-    <!-- version.org.slf4j>1.5.10</version.org.slf4j -->
-    <version.org.slf4j>1.6.1</version.org.slf4j>
-    <version.org.snmp4j>2.0.3</version.org.snmp4j>
-    <version.junit.junit>4.10</version.junit.junit>
+    <version.org.mobicents.sip.serlvet.weld>1.0.0.ALPHA1</version.org.mobicents.sip.serlvet.weld>
     <version.org.mockito>1.9.0</version.org.mockito>
-    <version.org.quartz-scheduler>2.1.3</version.org.quartz-scheduler>
-    <version.org.jbehave>3.5.4</version.org.jbehave>
-    <version.org.drools>5.3.1.Final</version.org.drools>
-    <version.org.eclipse.jetty>8.1.2.v20120308</version.org.eclipse.jetty>
-    <version.org.jboss.resteasy>2.3.1.GA</version.org.jboss.resteasy>
-    <version.javax.xml.bind>2.2.3</version.javax.xml.bind>
+    <version.org.richfaces.bom>4.2.1.Final</version.org.richfaces.bom>
+    <version.org.seamframework>3.0.0.Final</version.org.seamframework>
+    <version.org.slf4j>1.6.1</version.org.slf4j>
+    <version.junit.junit>4.10</version.junit.junit>
   </properties>
 
   <modules>
-    <module>lib</module>
+    <module>sipbook-lib</module>
+    <module>sipbook-ejb</module>
+    <module>sipbook-web</module>
+    <module>sipbook-ear</module>
+<!--
     <module>extensions</module>
     <module>apps</module>
-<!--
     <module>clients</module>1
     <module>wow-log-ear</module>
     <module>ejb</module>
@@ -173,39 +159,9 @@
   <dependencyManagement>
     <dependencies>
       <dependency>
-	<groupId>commons-beanutils</groupId>
-	<artifactId>commons-beanutils</artifactId>
-	<version>${version.commons.beanutils}</version>
-      </dependency>
-      <dependency>
 	<groupId>commons-codec</groupId>
 	<artifactId>commons-codec</artifactId>
 	<version>${version.commons.codec}</version>
-      </dependency>
-      <dependency>
-	<groupId>commons-cli</groupId>
-	<artifactId>commons-cli</artifactId>
-	<version>${version.commons.cli}</version>
-      </dependency>
-      <dependency>
-	<groupId>commons-configuration</groupId>
-	<artifactId>commons-configuration</artifactId>
-	<version>${version.commons.configuration}</version>
-      </dependency>
-      <dependency>
-	<groupId>commons-collections</groupId>
-	<artifactId>commons-collections</artifactId>
-	<version>${version.commons.collections}</version>
-      </dependency>
-      <dependency>
-	<groupId>commons-digester</groupId>
-	<artifactId>commons-digester</artifactId>
-	<version>${version.commons.digester}</version>
-      </dependency>
-      <dependency>
-	<groupId>commons-jxpath</groupId>
-	<artifactId>commons-jxpath</artifactId>
-	<version>${version.commons.jxpath}</version> 
       </dependency>
       <dependency>
         <groupId>javax.xml.bind</groupId>
@@ -222,16 +178,6 @@
 	<artifactId>log4j</artifactId> 
 	<version>${version.log4j}</version> 
       </dependency> 
-      <dependency>
-	<groupId>org.apache.commons</groupId>
-	<artifactId>commons-jexl</artifactId>
-	<version>${version.commons.jexl}</version> 
-      </dependency>
-      <dependency>
-	<groupId>org.apache.commons</groupId>
-	<artifactId>commons-vfs2</artifactId>
-	<version>${version.commons.vfs}</version> 
-      </dependency>
       <dependency>
 	<groupId>org.hibernate</groupId>
 	<artifactId>hibernate-validator</artifactId>
@@ -253,11 +199,6 @@
 	<groupId>org.jboss.resteasy</groupId>
 	<artifactId>resteasy-jettison-provider</artifactId>
 	<version>${version.org.jboss.resteasy}</version>
-      </dependency>
-      <dependency>
-	<groupId>org.quartz-scheduler</groupId>
-	<artifactId>quartz</artifactId>
-	<version>${version.org.quartz-scheduler}</version>
       </dependency>
       <dependency>
 	<groupId>org.slf4j</groupId>
@@ -290,34 +231,9 @@
 	<version>${version.commons.lang}</version>
       </dependency>
       <dependency>
-	<groupId>org.eclipse.jetty</groupId>
-	<artifactId>jetty-http</artifactId>
-	<version>${version.org.eclipse.jetty}</version>
-      </dependency>
-      <dependency>
-	<groupId>org.eclipse.jetty</groupId>
-	<artifactId>jetty-server</artifactId>
-	<version>${version.org.eclipse.jetty}</version>
-      </dependency>
-      <dependency>
-	<groupId>org.eclipse.jetty</groupId>
-	<artifactId>jetty-servlet</artifactId>
-	<version>${version.org.eclipse.jetty}</version>
-      </dependency>
-      <dependency>
-	<groupId>org.eclipse.jetty</groupId>
-	<artifactId>jetty-webapp</artifactId>
-	<version>${version.org.eclipse.jetty}</version>
-      </dependency>
-      <dependency>
 	<groupId>org.jboss.arquillian</groupId>
 	<artifactId>arquillian-junit</artifactId>
 	<version>${version.org.jboss.arquillian}</version>
-      </dependency>
-      <dependency>
-	<groupId>io.netty</groupId>
-	<artifactId>netty</artifactId>
-	<version>${version.io.netty}</version>
       </dependency>
      <dependency>
 	<groupId>org.jboss.seam</groupId>
@@ -328,7 +244,7 @@
       </dependency>
       <dependency>
         <groupId>org.jboss.spec</groupId>
-        <artifactId>jboss-javaee-web-6.0</artifactId>
+        <artifactId>jboss-javaee6-specs-bom</artifactId>
         <version>${version.org.jboss.spec.bom}</version>
         <type>pom</type>
         <scope>import</scope>
@@ -353,16 +269,6 @@
         <version>${version.org.jboss.weld.spi}</version>
       </dependency>
       <dependency>
-        <groupId>org.jboss.weld.se</groupId>
-        <artifactId>weld-se-core</artifactId>
-        <version>${version.org.jboss.weld.se}</version>
-      </dependency>
-      <dependency>
-        <groupId>log4j</groupId>
-        <artifactId>log4j</artifactId>
-        <version>${version.log4j}</version>
-      </dependency>
-      <dependency>
         <groupId>org.richfaces</groupId>
         <artifactId>richfaces-bom</artifactId>
         <version>${version.org.richfaces.bom}</version>
@@ -370,32 +276,14 @@
         <type>pom</type>
       </dependency>
       <dependency>
-        <groupId>org.snmp4j</groupId>
-        <artifactId>snmp4j</artifactId>
-        <version>${version.org.snmp4j}</version>
-      </dependency>
+        <groupId>org.mobicents.servlet.sip.weld</groupId>
+        <artifactId>sip-servlets-weld</artifactId>
+        <version>${version.org.mobicents.sip.serlvet.weld}</version>
+      </dependency>      
       <dependency>
 	<groupId>org.mockito</groupId>
 	<artifactId>mockito-all</artifactId>
 	<version>${version.org.mockito}</version>
-	<scope>test</scope>
-      </dependency>
-      <dependency>
-	<groupId>org.jbehave</groupId>
-	<artifactId>jbehave-core</artifactId>
-	<version>${version.org.jbehave}</version>
-	<scope>test</scope>
-      </dependency>
-      <dependency>
-	<groupId>org.drools</groupId>
-	<artifactId>drools-core</artifactId>
-	<version>${version.org.drools}</version>
-	<scope>test</scope>
-      </dependency>
-      <dependency>
-	<groupId>org.drools</groupId>
-	<artifactId>drools-compiler</artifactId>
-	<version>${version.org.drools}</version>
 	<scope>test</scope>
       </dependency>
     </dependencies>
