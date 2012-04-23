@@ -1,0 +1,263 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+  <parent>
+    <groupId>de.urb.timesheet</groupId>
+    <artifactId>timesheet</artifactId>
+    <version>${version.de.urb.timesheet}</version>
+  </parent>
+  <modelVersion>4.0.0</modelVersion>
+  <groupId>de.urb.timesheet</groupId>
+  <artifactId>timesheet-ear</artifactId>
+  <version>${version.de.urb.timesheet}</version>
+  <name>Timesheet ear</name>
+  <packaging>ear</packaging>
+  <inceptionYear>2011</inceptionYear>
+
+  <build>
+    <plugins>
+      <plugin>
+	<groupId>org.apache.maven.plugins</groupId>
+        <artifactId>maven-ear-plugin</artifactId>
+        <extensions>true</extensions>
+        <configuration>
+          <defaultLibBundleDir>lib</defaultLibBundleDir>
+          <modules>
+
+            <jarModule>
+              <groupId>commons-codec</groupId>
+              <artifactId>commons-codec</artifactId>
+            </jarModule>
+
+<!--
+            <jarModule>
+              <groupId>commons-io</groupId>
+              <artifactId>commons-io</artifactId>
+              <includeInApplicationXml>true</includeInApplicationXml>
+            </jarModule>
+-->
+
+            <jarModule>
+	      <groupId>org.apache.commons</groupId>
+	      <artifactId>commons-lang3</artifactId>
+            </jarModule>
+
+            <jarModule>
+              <groupId>commons-logging</groupId>
+              <artifactId>commons-logging</artifactId>
+            </jarModule>
+
+            <jarModule>
+	      <groupId>de.urb.timesheet</groupId>
+	      <artifactId>common-types</artifactId>
+            </jarModule>
+
+<!--
+            <jarModule>
+              <groupId>org.apache.commons</groupId>
+              <artifactId>commons-email</artifactId>
+              <includeInApplicationXml>true</includeInApplicationXml>
+            </jarModule>
+-->
+
+            <ejbModule>
+	      <groupId>de.urb.timesheet</groupId>
+	      <artifactId>common-ejb</artifactId>
+	    </ejbModule>
+
+<!--
+            <ejbModule>
+	      <groupId>org.jboss.seam</groupId>
+	      <artifactId>jboss-seam</artifactId>
+	    </ejbModule>
+-->
+	    <webModule>
+	      <groupId>de.urb.timesheet</groupId>
+              <artifactId>admin-app</artifactId>
+              <contextRoot>/timesheet/admin</contextRoot>
+            </webModule>
+
+	    <webModule>
+	      <groupId>de.urb.timesheet</groupId>
+              <artifactId>public-app</artifactId>
+              <contextRoot>/timesheet/public</contextRoot>
+            </webModule>
+          </modules>
+        </configuration>
+      </plugin>
+    </plugins>
+  </build>
+
+  <repositories>
+    <repository>
+      <id>JBoss Nexus repository</id>
+      <url>https://repository.jboss.org/nexus/content/groups/public/</url>
+      <snapshots>
+        <enabled>false</enabled>
+      </snapshots>
+      <releases>
+        <enabled>true</enabled>
+      </releases>
+    </repository>
+  </repositories>
+
+  <dependencies>
+    <dependency>
+      <groupId>commons-codec</groupId>
+      <artifactId>commons-codec</artifactId>
+    </dependency>
+
+<!--
+    <dependency>
+      <groupId>commons-io</groupId>
+      <artifactId>commons-io</artifactId>
+      <version>${version.commons.io}</version>
+    </dependency>
+
+    <dependency>
+      <groupId>commons-lang</groupId>
+      <artifactId>commons-lang</artifactId>
+      <version>${version.commons.lang}</version>
+    </dependency>
+-->
+    <dependency>
+      <groupId>org.apache.commons</groupId>
+      <artifactId>commons-lang3</artifactId>
+    </dependency>
+
+    <dependency>
+      <groupId>commons-logging</groupId>
+      <artifactId>commons-logging</artifactId>
+      <exclusions>
+        <exclusion>
+          <groupId>log4j</groupId>
+          <artifactId>log4j</artifactId>
+        </exclusion>
+        <exclusion>
+          <groupId>avalon-framework</groupId>
+          <artifactId>avalon-framework</artifactId>
+        </exclusion>
+        <exclusion>
+          <groupId>logkit</groupId>
+          <artifactId>logkit</artifactId>
+        </exclusion>
+        <exclusion>
+          <groupId>javax.servlet</groupId>
+          <artifactId>servlet-api</artifactId>
+        </exclusion>
+      </exclusions>
+    </dependency>
+
+    <dependency>
+      <groupId>de.urb.timesheet</groupId>
+      <artifactId>common-ejb</artifactId>
+      <version>${version.de.urb.timesheet}</version>
+      <type>ejb</type>
+    </dependency>
+
+    <dependency>
+      <groupId>de.urb.timesheet</groupId>
+      <artifactId>admin-app</artifactId>
+      <type>war</type>
+      <version>${version.de.urb.timesheet}</version>
+    </dependency>
+
+    <dependency>
+      <groupId>de.urb.timesheet</groupId>
+      <artifactId>public-app</artifactId>
+      <type>war</type>
+      <version>${version.de.urb.timesheet}</version>
+    </dependency>
+
+    <dependency>
+      <groupId>de.urb.timesheet</groupId>
+      <artifactId>common-types</artifactId>
+      <version>${version.de.urb.timesheet}</version>
+      <scope>provided</scope>
+    </dependency>
+<!--
+    <dependency>
+      <groupId>org.apache.commons</groupId>
+      <artifactId>commons-email</artifactId>
+      <version>${version.commons.mail}</version>
+    </dependency>
+
+    <dependency>
+      <groupId>javax.servlet</groupId>
+      <artifactId>servlet-api</artifactId>
+      <version>2.5</version>
+      <scope>provided</scope>
+    </dependency>
+
+    <dependency>
+      <groupId>log4j</groupId>
+      <artifactId>log4j</artifactId>
+      <version>1.2.13</version>
+      <scope>provided</scope>
+    </dependency>
+-->
+
+<!--
+    <dependency>
+      <groupId>org.jboss.seam</groupId>
+      <artifactId>jboss-seam</artifactId>
+      <version>${version.org.jboss.seam}</version>
+      <type>ejb</type>
+      <exclusions>
+	<exclusion>
+	  <groupId>com.sun.facelets</groupId>
+	  <artifactId>jsf-facelets</artifactId>
+	</exclusion>
+	<exclusion>
+	  <groupId>javax.el</groupId>
+	  <artifactId>el-api</artifactId>
+	</exclusion>
+      </exclusions>
+    </dependency>
+
+    <dependency>
+      <groupId>org.jboss.seam</groupId>
+      <artifactId>jboss-seam-mail</artifactId>
+      <version>${version.org.jboss.seam}</version>
+      <exclusions>
+	<exclusion>
+	  <groupId>com.sun.facelets</groupId>
+	  <artifactId>jsf-facelets</artifactId>
+	</exclusion>
+	<exclusion>
+	  <groupId>javax.el</groupId>
+	  <artifactId>el-api</artifactId>
+	</exclusion>
+	<exclusion>
+	  <groupId>org.jboss.seam</groupId>
+	  <artifactId>jboss-seam</artifactId>
+	</exclusion>
+      </exclusions>
+    </dependency>
+-->
+
+    <dependency>
+      <groupId>junit</groupId>
+      <artifactId>junit</artifactId>
+      <version>${version.junit.junit}</version>
+      <scope>test</scope>
+    </dependency>
+
+  </dependencies>
+</project>
+<!-- Keep this comment at the end of the file
+Local variables:
+mode: xml
+sgml-omittag:nil
+sgml-shorttag:nil
+sgml-namecase-general:nil
+sgml-general-insert-case:lower
+sgml-minimize-attributes:nil
+sgml-always-quote-attributes:t
+sgml-indent-step:2
+sgml-indent-data:t
+sgml-parent-document:nil
+sgml-exposed-tags:nil
+sgml-local-catalogs:nil
+sgml-local-ecat-files:nil
+End:
+-->
