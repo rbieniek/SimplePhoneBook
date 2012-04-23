@@ -1,0 +1,84 @@
+<!-- Marker file indicating JSF 2.0 should be enabled in the application -->
+
+<faces-config version="2.0" xmlns="http://java.sun.com/xml/ns/javaee" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="
+      http://java.sun.com/xml/ns/javaee
+      http://java.sun.com/xml/ns/javaee/web-facesconfig_2_0.xsd">
+<!--
+   <application>
+      <message-bundle>ValidationMessages</message-bundle>
+      <locale-config>
+         <default-locale>de</default-locale>
+         <supported-locale>en</supported-locale>
+      </locale-config>
+      <resource-bundle>
+         <base-name>de.urb.timesheet.web.admin.messages</base-name>
+         <var>msgs</var>
+      </resource-bundle>
+      <resource-bundle>
+         <base-name>de.urb.timesheet.web.admin.validator_messages</base-name>
+         <var>vmsgs</var>
+      </resource-bundle>
+   </application>
+
+   <navigation-rule>
+      <from-view-id>/security/login.xhtml</from-view-id>
+      <navigation-case>
+         <from-outcome>failed</from-outcome>
+         <to-view-id>/security/login.xhtml</to-view-id>
+      </navigation-case>
+   </navigation-rule>
+   
+   <navigation-rule>
+      <from-view-id>/admin/profile/editCurrentUserProfile.xhtml</from-view-id>   
+      <navigation-case>
+         <from-action>#{editProfile.storeNewPassword}</from-action>
+         <from-outcome>passwordChanged</from-outcome>
+         <to-view-id>/admin/profile/editProfileSuccess.xhtml</to-view-id>
+      </navigation-case>
+   </navigation-rule>
+   
+   <navigation-rule>
+      <navigation-case>
+         <from-outcome>stateCorrupted</from-outcome>
+         <to-view-id>/error/stateCorrupted.xhtml</to-view-id>
+         <redirect/>
+      </navigation-case>  
+   </navigation-rule>
+   
+   <navigation-rule>
+      <navigation-case>
+         <from-outcome>internalProcessingFailed</from-outcome>
+         <to-view-id>/error/internalProcessing.xhtml</to-view-id>
+         <redirect/>
+      </navigation-case>  
+   </navigation-rule>
+      
+   <navigation-rule>
+      <from-view-id>/admin/profile/createUserProfile.xhtml</from-view-id>   
+      <navigation-case>
+         <from-action>#{createProfile.navigateToPasswordEnter}</from-action>
+         <from-outcome>continue</from-outcome>
+         <to-view-id>/admin/profile/create/enterPassword.xhtml</to-view-id>
+      </navigation-case>
+   </navigation-rule>
+   
+   <navigation-rule>
+      <from-view-id>/admin/profile/create/enterAddresses.xhtml</from-view-id>   
+      <navigation-case>
+         <from-action>#{createProfile.navigateToConfirm}</from-action>
+         <from-outcome>continue</from-outcome>
+         <to-view-id>/admin/profile/create/confirm.xhtml</to-view-id>
+      </navigation-case>
+   </navigation-rule>
+   
+   <navigation-rule>
+      <from-view-id>/admin/profile/create/confirm.xhtml</from-view-id>   
+      <navigation-case>
+         <from-action>#{createProfile.createUser}</from-action>
+         <from-outcome>continue</from-outcome>
+         <to-view-id>/admin/profile/create/done.xhtml</to-view-id>
+      </navigation-case>
+   </navigation-rule>
+   -->
+
+</faces-config>
