@@ -1,7 +1,7 @@
 /**
  * 
  */
-package de.urb.timesheet.lib.faces.pages;
+package de.urb.sipbook.web.faces;
 
 import java.io.InputStream;
 import java.util.Enumeration;

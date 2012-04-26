@@ -10,13 +10,61 @@
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
         <h:outputStylesheet library="css" name="reset.css" />
         <h:outputStylesheet library="css" name="text.css" />
-        <h:outputStylesheet library="css" name="1200.css" />
-        <h:outputStylesheet library="css" name="timesheet.css" />
+        <h:outputStylesheet library="css" name="960.css" />
+        <h:outputStylesheet library="css" name="sipbook.css" />
         <h:outputScript library="js" name="prototype.js" />
         <h:outputScript library="js" name="scriptaculous.js" />
         <title><ui:insert name="title">Facelet template</ui:insert></title>
     </h:head>
     
     <h:body styleClass="body" style="background-image: url(#{resource['images:background.png']});">
+      <div id="header"class="container_12">
+	<img src="Logo.png" alt="Project logo" class="grid_2" />
+	<span id="headline" class="push_1 grid_6"><ui:insert name="headline">Facelet template</ui:insert></span>
+      </div>
+      <div id="content" class="container_12" >
+	<div id="contentBox" class="push_1 grid_7 shadowedBox">
+	  <c:if test="#{userInfo.loggedIn}">
+	    <ui:insert name="content">Facelet template</ui:insert>
+	  </c:if>
+	  <c:if test="#{!userInfo.loggedIn}">
+	    <h:form id="loginForm">
+	    <div>
+	    <h:outputLabel for="name" value="#{pageProps.login_username}:" styleClass="login_label"/>
+	    <h:inputText id="name" required="true" maxLength="32" size="32" autocomplete="off" value="#{credentials.username}"/>
+	    <c:if test="#{validatorMessage.hasMessageFor('loginForm:name')}">
+	      <rich:message for="name" />
+	    </c:if>
+	    </div>
+	    <div>
+	      <h:outputLabel for="password" value="#{pageProps.login_password}:" styleClass="login_label"/>
+	      <h:inputSecret id="password" maxLength="32" size="32" autocomplete="off" required="true" value="#{credentials.password}" redisplay="true"/>
+	      <c:if test="#{validatorMessage.hasMessageFor('loginForm:password')}">
+			<rich:message for="password" />
+	      </c:if>
+	    </div>
+	    <div>
+	      <h:commandButton id="login" value="#{pageProps.login_action}" action="#{identity.login}" styleClass="login_button"/>
+	    </div>
+	    </h:form>
+	  </c:if>
+	</div>
+	<div id="linkBox" class="push_1 grid_4 shadowedBox">
+	  <c:if test="#{userInfo.adminLogin}">
+	  </c:if>
+	  <c:if test="#{userInfo.userLogin}">
+	  </c:if>
+	</div>
+	<div id="contactBox" class="push_1 grid_4 shadowedBox">
+	  <p class="head">License</p>
+	  <p>This is an open source project under the <a href="http://www.apache.org/licenses/LICENSE-2.0.html">Apache 2.0 license.</a></p>
+	  <p class="head">Contact</p>
+	  <p>Please contact Rainer.Bieniek(at)web.de for questions or imporvements.</p>
+	</div>
+	<div id="newsBox" class="push_1 grid_7 shadowedBox">
+	  <p class="head">01.02.2012</p>
+	  <p>Project became public by hosting on GITHub</p>
+	</div>
+      </div>
     </h:body>
 </html>

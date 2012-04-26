@@ -43,16 +43,6 @@
             </jarModule>
 
             <jarModule>
-	      <groupId>org.slf4j</groupId>
-	      <artifactId>slf4j-api</artifactId>
-            </jarModule>
-
-            <jarModule>
-	      <groupId>org.slf4j</groupId>
-	      <artifactId>slf4j-log4j12</artifactId>
-            </jarModule>
-
-            <jarModule>
 	      <groupId>de.urb.sipbook</groupId>
 	      <artifactId>sipbook-lib</artifactId>
             </jarModule>
@@ -117,17 +107,6 @@
       <artifactId>sipbook-web</artifactId>
       <type>war</type>
       <version>${version.de.urb.sipbook}</version>
-    </dependency>
-
-
-    <dependency>
-      <groupId>org.slf4j</groupId>
-      <artifactId>slf4j-api</artifactId>
-    </dependency>
-
-    <dependency>
-      <groupId>org.slf4j</groupId>
-      <artifactId>slf4j-log4j12</artifactId>
     </dependency>
 
     <dependency>

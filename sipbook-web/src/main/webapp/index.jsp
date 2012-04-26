@@ -1,2 +1,2 @@
 <%@ taglib uri="http://java.sun.com/jstl/core" prefix="c"%>
-<c:redirect url="/admin/index.xhtml" />
+<c:redirect url="/user/index.xhtml" />

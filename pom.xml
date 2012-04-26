@@ -92,6 +92,16 @@
       <plugins>
     	<plugin>
     	  <groupId>org.apache.maven.plugins</groupId>
+    	  <artifactId>maven-compiler-plugin</artifactId>
+    	  <version>${version.org.apache.maven.plugins.maven_compiler_plugin}</version>
+    	</plugin>
+    	<plugin>
+    	  <groupId>org.apache.maven.plugins</groupId>
+    	  <artifactId>maven-ear-plugin</artifactId>
+    	  <version>${version.org.apache.maven.plugins.maven_ear_plugin}</version>
+    	</plugin>
+    	<plugin>
+    	  <groupId>org.apache.maven.plugins</groupId>
     	  <artifactId>maven-jar-plugin</artifactId>
     	  <version>${version.org.apache.maven.plugins.maven_jar_plugin}</version>
     	</plugin>
@@ -99,6 +109,11 @@
     	  <groupId>org.apache.maven.plugins</groupId>
     	  <artifactId>maven-surefire-plugin</artifactId>
     	  <version>${version.org.apache.maven.plugins.maven_surefire_plugin}</version>
+    	</plugin>
+    	<plugin>
+    	  <groupId>org.apache.maven.plugins</groupId>
+    	  <artifactId>maven-war-plugin</artifactId>
+    	  <version>${version.org.apache.maven.plugins.maven_war_plugin}</version>
     	</plugin>
       </plugins>
     </pluginManagement>
@@ -117,14 +132,20 @@
   </build>
 
   <properties>
+    <version.com.ocpsoft.prettyfaces>3.3.3</version.com.ocpsoft.prettyfaces>
     <version.commons.codec>1.4</version.commons.codec>
     <version.commons.lang>3.0.1</version.commons.lang>
     <version.de.urb.sipbook>0.1-SNAPSHOT</version.de.urb.sipbook>
     <version.log4j>1.2.16</version.log4j>
     <version.javax.enterprise.cdi-api>1.1.EDR1.2</version.javax.enterprise.cdi-api>
     <version.javax.xml.bind>2.2.3</version.javax.xml.bind>
-    <version.org.apache.maven.plugins.maven_jar_plugin>2.3.2</version.org.apache.maven.plugins.maven_jar_plugin>
-    <version.org.apache.maven.plugins.maven_surefire_plugin>2.11</version.org.apache.maven.plugins.maven_surefire_plugin>
+    <version.joda.time>1.6</version.joda.time>
+    <version.org.apache.maven.plugins.maven_compiler_plugin>2.3.2</version.org.apache.maven.plugins.maven_compiler_plugin>
+    <version.org.apache.maven.plugins.maven_ear_plugin>2.7</version.org.apache.maven.plugins.maven_ear_plugin>
+    <version.org.apache.maven.plugins.maven_jar_plugin>2.4</version.org.apache.maven.plugins.maven_jar_plugin>
+    <version.org.apache.maven.plugins.maven_surefire_plugin>2.12</version.org.apache.maven.plugins.maven_surefire_plugin>
+    <version.org.apache.maven.plugins.maven_war_plugin>2.2</version.org.apache.maven.plugins.maven_war_plugin>
+    <version.org.drools>5.3.1.Final</version.org.drools>
     <version.org.hibernate.validator>4.2.0.Final</version.org.hibernate.validator>
     <version.org.jboss.arquillian>1.0.0.Alpha5</version.org.jboss.arquillian>
     <version.org.jboss.resteasy>2.3.1.GA</version.org.jboss.resteasy>
@@ -158,6 +179,11 @@
 
   <dependencyManagement>
     <dependencies>
+      <dependency>
+	<groupId>com.ocpsoft</groupId>
+	<artifactId>prettyfaces-jsf2</artifactId>
+	<version>${version.com.ocpsoft.prettyfaces}</version>
+      </dependency>
       <dependency>
 	<groupId>commons-codec</groupId>
 	<artifactId>commons-codec</artifactId>
@@ -199,6 +225,21 @@
 	<groupId>org.jboss.resteasy</groupId>
 	<artifactId>resteasy-jettison-provider</artifactId>
 	<version>${version.org.jboss.resteasy}</version>
+      </dependency>
+      <dependency>
+	<groupId>joda-time</groupId>
+	<artifactId>joda-time</artifactId>
+	<version>${version.joda.time}</version>
+      </dependency>
+      <dependency>
+	<groupId>org.drools</groupId>
+	<artifactId>drools-core</artifactId>
+	<version>${version.org.drools}</version>
+      </dependency>
+      <dependency>
+	<groupId>org.drools</groupId>
+	<artifactId>drools-compiler</artifactId>
+	<version>${version.org.drools}</version>
       </dependency>
       <dependency>
 	<groupId>org.slf4j</groupId>

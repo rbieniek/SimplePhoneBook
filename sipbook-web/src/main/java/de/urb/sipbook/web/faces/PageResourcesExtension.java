@@ -1,13 +1,12 @@
 /**
  * 
  */
-package de.urb.timesheet.lib.faces.pages;
+package de.urb.sipbook.web.faces;
 
 import java.lang.annotation.Annotation;
 import java.lang.reflect.Type;
 import java.util.Collections;
 import java.util.HashSet;
-import java.util.ResourceBundle;
 import java.util.Set;
 
 import javax.enterprise.context.ApplicationScoped;

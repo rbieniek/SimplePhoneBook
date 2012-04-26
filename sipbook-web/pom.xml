@@ -20,12 +20,22 @@
 	<artifactId>maven-war-plugin</artifactId>
 	<configuration>
 	  <failOnMissingWebXml>false</failOnMissingWebXml>
+	  <archive>
+            <manifestEntries>
+              <Dependencies>org.apache.log4j,org.apache.velocity,org.hibernate,org.joda.time,org.mobicents.libs,org.slf4j</Dependencies>
+            </manifestEntries>
+          </archive>
 	</configuration>	
       </plugin>
     </plugins>
   </build>
 
   <dependencies>
+
+    <dependency>
+      <groupId>com.ocpsoft</groupId>
+      <artifactId>prettyfaces-jsf2</artifactId>
+    </dependency>
 
     <dependency>
       <groupId>org.apache.commons</groupId>
@@ -46,7 +56,24 @@
       <artifactId>sipbook-ejb</artifactId>
       <version>${version.de.urb.sipbook}</version>
       <type>ejb-client</type>
-      <scope>provided</scope>
+      <!-- scope>provided</scope -->
+    </dependency>
+
+    <!--
+    <dependency>
+      <groupId>joda-time</groupId>
+      <artifactId>joda-time</artifactId>
+    </dependency>
+    -->
+
+    <dependency>
+      <groupId>org.drools</groupId>
+      <artifactId>drools-core</artifactId>
+    </dependency>
+
+    <dependency>
+      <groupId>org.drools</groupId>
+      <artifactId>drools-compiler</artifactId>
     </dependency>
 
     <dependency>
@@ -78,12 +105,12 @@
       <groupId>org.jboss.seam.servlet</groupId>
       <artifactId>seam-servlet</artifactId>
     </dependency>
-
+<!--
     <dependency>
       <groupId>org.mobicents.servlet.sip.weld</groupId>
       <artifactId>sip-servlets-weld</artifactId>
     </dependency>      
-    
+    -->
     <dependency>
       <groupId>javax</groupId>
       <artifactId>javaee-web-api</artifactId>
