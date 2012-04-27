@@ -20,9 +20,35 @@
 	<artifactId>maven-war-plugin</artifactId>
 	<configuration>
 	  <failOnMissingWebXml>false</failOnMissingWebXml>
+<!--
+	  <archive>
+	    <manifestSections>
+	      <manifestSection>
+		<name>Logging dependencies</name>
+		<manifestEntries>
+		  <Dependencies>org.apache.log4j,org.slf4j,org.slf4j.ext</Dependencies>
+		</manifestEntries>
+	      </manifestSection>
+	      <manifestSection>
+		<name>Misc dependencies</name>
+		<manifestEntries>
+		  <Dependencies>org.apache.velocity,org.hibernate,org.joda.time</Dependencies>
+		</manifestEntries>
+	      </manifestSection>
+	      <manifestSection>
+		<name>Mobi cents dependencies</name>
+		<manifestEntries>
+		  <Dependencies>org.mobicents.as7,org.mobicents.javax.servlet.sip,org.mobicents.libs</Dependencies>
+		</manifestEntries>
+	      </manifestSection>
+	    </manifestSections>
+	  </archive>
+-->
 	  <archive>
             <manifestEntries>
-              <Dependencies>org.apache.log4j,org.apache.velocity,org.hibernate,org.joda.time,org.mobicents.libs,org.slf4j</Dependencies>
+              <!-- Dependencies>org.apache.log4j,org.apache.velocity,org.hibernate,org.joda.time,org.mobicents.as7,org.mobicents.javax.servlet.sip,org.mobicents.libs,org.slf4j,org.slf4j.ext</Dependencies-->
+              <!-- Dependencies>org.hibernate,org.joda.time,org.mobicents.as7,org.mobicents.javax.servlet.sip,org.mobicents.libs,org.slf4j.ext</Dependencies -->
+              <Dependencies>org.hibernate,org.jboss.vfs,org.joda.time,org.mobicents.as7,org.mobicents.libs,org.slf4j.ext,org.jboss.weld.servlet</Dependencies>
             </manifestEntries>
           </archive>
 	</configuration>	
@@ -59,13 +85,6 @@
       <!-- scope>provided</scope -->
     </dependency>
 
-    <!--
-    <dependency>
-      <groupId>joda-time</groupId>
-      <artifactId>joda-time</artifactId>
-    </dependency>
-    -->
-
     <dependency>
       <groupId>org.drools</groupId>
       <artifactId>drools-core</artifactId>
@@ -79,6 +98,12 @@
     <dependency>
       <groupId>org.hibernate</groupId>
       <artifactId>hibernate-validator</artifactId>
+    </dependency>
+
+    <dependency>
+      <groupId>org.jboss</groupId>
+      <artifactId>jboss-vfs</artifactId>
+      <scope>provided</scope>
     </dependency>
 
     <dependency>
@@ -105,12 +130,32 @@
       <groupId>org.jboss.seam.servlet</groupId>
       <artifactId>seam-servlet</artifactId>
     </dependency>
-<!--
+
+    <dependency>
+      <groupId>org.jboss.weld.servlet</groupId>
+      <artifactId>weld-servlet-core</artifactId>
+      <scope>provided</scope>
+    </dependency>
+
+    <!--
     <dependency>
       <groupId>org.mobicents.servlet.sip.weld</groupId>
       <artifactId>sip-servlets-weld</artifactId>
     </dependency>      
     -->
+
+    <dependency>
+      <groupId>org.mobicents.servlet.sip.ctf.core</groupId>
+      <artifactId>ctf-core</artifactId>
+    </dependency>      
+
+    <!--
+    <dependency>
+      <groupId>org.mobicents.servlet.sip.ctf.core</groupId>
+      <artifactId>ctf-core-extension</artifactId>
+    </dependency>      
+    -->
+
     <dependency>
       <groupId>javax</groupId>
       <artifactId>javaee-web-api</artifactId>
