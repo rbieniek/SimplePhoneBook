@@ -107,11 +107,6 @@
     </dependency>
 
     <dependency>
-      <groupId>org.jboss.seam.catch</groupId>
-      <artifactId>seam-catch</artifactId>
-    </dependency>
-
-    <dependency>
       <groupId>org.jboss.seam.faces</groupId>
       <artifactId>seam-faces</artifactId>
     </dependency>
@@ -127,8 +122,15 @@
     </dependency>
 
     <dependency>
-      <groupId>org.jboss.seam.servlet</groupId>
-      <artifactId>seam-servlet</artifactId>
+      <groupId>org.jboss.solder</groupId>
+      <artifactId>solder-impl</artifactId>
+      <scope>runtime</scope>
+    </dependency>
+    
+    <dependency>
+      <groupId>org.jboss.solder</groupId>
+      <artifactId>solder-api</artifactId>
+      <scope>compile</scope>
     </dependency>
 
     <dependency>
