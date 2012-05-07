@@ -16,15 +16,21 @@
   <param-name>javax.faces.PROJECT_STAGE</param-name>
   <param-value>Development</param-value>
  </context-param>
+<!--
  <listener>
-  <!-- listener-class>org.mobicents.servlet.sip.weld.environment.servlet.SipServletsWeldListener</listener-class -->
   <listener-class>de.urb.sipbook.web.servlet.listeners.SipServletListener</listener-class>
  </listener>
+-->
  <servlet>
   <servlet-name>Faces Servlet</servlet-name>
   <servlet-class>javax.faces.webapp.FacesServlet</servlet-class>
   <load-on-startup>1</load-on-startup>
  </servlet>
+ <servlet>
+   <servlet-name>Servlet REST Listener Startup</servlet-name>
+   <servlet-class>org.jboss.seam.rest.SeamRestStartupListener</servlet-class>
+   <load-on-startup>1</load-on-startup>
+ </servlet> 
  <servlet-mapping>
   <servlet-name>Faces Servlet</servlet-name>
   <url-pattern>*.xhtml</url-pattern>

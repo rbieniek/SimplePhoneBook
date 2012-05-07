@@ -22,35 +22,11 @@
 	  <failOnMissingWebXml>false</failOnMissingWebXml>
 <!--
 	  <archive>
-	    <manifestSections>
-	      <manifestSection>
-		<name>Logging dependencies</name>
-		<manifestEntries>
-		  <Dependencies>org.apache.log4j,org.slf4j,org.slf4j.ext</Dependencies>
-		</manifestEntries>
-	      </manifestSection>
-	      <manifestSection>
-		<name>Misc dependencies</name>
-		<manifestEntries>
-		  <Dependencies>org.apache.velocity,org.hibernate,org.joda.time</Dependencies>
-		</manifestEntries>
-	      </manifestSection>
-	      <manifestSection>
-		<name>Mobi cents dependencies</name>
-		<manifestEntries>
-		  <Dependencies>org.mobicents.as7,org.mobicents.javax.servlet.sip,org.mobicents.libs</Dependencies>
-		</manifestEntries>
-	      </manifestSection>
-	    </manifestSections>
-	  </archive>
--->
-	  <archive>
             <manifestEntries>
-              <!-- Dependencies>org.apache.log4j,org.apache.velocity,org.hibernate,org.joda.time,org.mobicents.as7,org.mobicents.javax.servlet.sip,org.mobicents.libs,org.slf4j,org.slf4j.ext</Dependencies-->
-              <!-- Dependencies>org.hibernate,org.joda.time,org.mobicents.as7,org.mobicents.javax.servlet.sip,org.mobicents.libs,org.slf4j.ext</Dependencies -->
               <Dependencies>org.hibernate,org.jboss.vfs,org.joda.time,org.mobicents.as7,org.mobicents.libs,org.slf4j.ext,org.jboss.weld.servlet</Dependencies>
             </manifestEntries>
           </archive>
+-->
 	</configuration>	
       </plugin>
     </plugins>
@@ -107,18 +83,97 @@
     </dependency>
 
     <dependency>
+      <groupId>org.jboss.seam.conversation</groupId>
+      <artifactId>seam-conversation-spi</artifactId>
+    </dependency>
+
+    <dependency>
+      <groupId>org.jboss.seam.conversation</groupId>
+      <artifactId>seam-conversation-weld</artifactId>
+      <exclusions>
+	<exclusion>
+	  <groupId>org.jboss.spec.javax.servlet</groupId>
+	  <artifactId>jboss-servlet-api_3.0_spec</artifactId>
+	</exclusion>
+      </exclusions>
+    </dependency>
+
+    <dependency>
+      <groupId>org.jboss.seam.faces</groupId>
+      <artifactId>seam-faces-api</artifactId>
+      <scope>compile</scope>
+    </dependency>
+
+    <dependency>
       <groupId>org.jboss.seam.faces</groupId>
       <artifactId>seam-faces</artifactId>
+      <scope>runtime</scope>
     </dependency>
 
     <dependency>
       <groupId>org.jboss.seam.international</groupId>
       <artifactId>seam-international</artifactId>
+      <scope>runtime</scope>
+    </dependency>
+
+    <dependency>
+      <groupId>org.jboss.seam.international</groupId>
+      <artifactId>seam-international-api</artifactId>
+      <scope>compile</scope>
+    </dependency>
+
+    <dependency>
+      <groupId>org.jboss.seam.persistence</groupId>
+      <artifactId>seam-persistence</artifactId>
+      <scope>runtime</scope>
+    </dependency>
+
+    <dependency>
+      <groupId>org.jboss.seam.persistence</groupId>
+      <artifactId>seam-persistence-api</artifactId>
+      <scope>compile</scope>
+    </dependency>
+
+    <dependency>
+      <groupId>org.jboss.seam.rest</groupId>
+      <artifactId>seam-rest</artifactId>
+      <scope>runtime</scope>
+    </dependency>
+
+    <dependency>
+      <groupId>org.jboss.seam.rest</groupId>
+      <artifactId>seam-rest-api</artifactId>
+      <scope>compile</scope>
+    </dependency>
+
+    <dependency>
+      <groupId>org.jboss.seam.security</groupId>
+      <artifactId>seam-security-api</artifactId>
+      <scope>compile</scope>
     </dependency>
 
     <dependency>
       <groupId>org.jboss.seam.security</groupId>
       <artifactId>seam-security</artifactId>
+      <scope>runtime</scope>
+    </dependency>
+
+    <dependency>
+      <groupId>org.jboss.seam.transaction</groupId>
+      <artifactId>seam-transaction-api</artifactId>
+      <scope>compile</scope>
+    </dependency>
+
+    <dependency>
+      <groupId>org.jboss.seam.transaction</groupId>
+      <artifactId>seam-transaction</artifactId>
+      <scope>runtime</scope>
+      <exclusions>
+	<exclusion>
+	  <groupId>org.jboss.spec.javax.servlet</groupId>
+	  <artifactId>jboss-servlet-api_3.0_spec</artifactId>
+	</exclusion>
+      </exclusions>
     </dependency>
 
     <dependency>
@@ -139,24 +194,10 @@
       <scope>provided</scope>
     </dependency>
 
-    <!--
-    <dependency>
-      <groupId>org.mobicents.servlet.sip.weld</groupId>
-      <artifactId>sip-servlets-weld</artifactId>
-    </dependency>      
-    -->
-
     <dependency>
       <groupId>org.mobicents.servlet.sip.ctf.core</groupId>
       <artifactId>ctf-core</artifactId>
     </dependency>      
-
-    <!--
-    <dependency>
-      <groupId>org.mobicents.servlet.sip.ctf.core</groupId>
-      <artifactId>ctf-core-extension</artifactId>
-    </dependency>      
-    -->
 
     <dependency>
       <groupId>javax</groupId>
