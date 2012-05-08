@@ -58,7 +58,6 @@
       <artifactId>sipbook-ejb</artifactId>
       <version>${version.de.urb.sipbook}</version>
       <type>ejb-client</type>
-      <!-- scope>provided</scope -->
     </dependency>
 
     <dependency>
@@ -187,17 +186,6 @@
       <artifactId>solder-api</artifactId>
       <scope>compile</scope>
     </dependency>
-
-    <dependency>
-      <groupId>org.jboss.weld.servlet</groupId>
-      <artifactId>weld-servlet-core</artifactId>
-      <scope>provided</scope>
-    </dependency>
-
-    <dependency>
-      <groupId>org.mobicents.servlet.sip.ctf.core</groupId>
-      <artifactId>ctf-core</artifactId>
-    </dependency>      
 
     <dependency>
       <groupId>javax</groupId>

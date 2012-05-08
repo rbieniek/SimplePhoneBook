@@ -59,6 +59,12 @@
               <contextRoot>/sipbook</contextRoot>
             </webModule>
 
+	    <webModule>
+	      <groupId>de.urb.sipbook</groupId>
+              <artifactId>sipbook-sip</artifactId>
+              <contextRoot>/sipbook-sip</contextRoot>
+            </webModule>
+
           </modules>
         </configuration>
       </plugin>
@@ -105,6 +111,13 @@
     <dependency>
       <groupId>de.urb.sipbook</groupId>
       <artifactId>sipbook-web</artifactId>
+      <type>war</type>
+      <version>${version.de.urb.sipbook}</version>
+    </dependency>
+
+    <dependency>
+      <groupId>de.urb.sipbook</groupId>
+      <artifactId>sipbook-sip</artifactId>
       <type>war</type>
       <version>${version.de.urb.sipbook}</version>
     </dependency>
