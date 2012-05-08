@@ -1,5 +1,3 @@
-<!-- Marker file indicating CDI 1.0 should be enabled -->
-
 <beans xmlns="http://java.sun.com/xml/ns/javaee"
    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
    xmlns:s="urn:java:ee"
@@ -7,16 +5,21 @@
    xmlns:plidm="urn:java:org.jboss.seam.security.management.picketlink"
    xsi:schemaLocation="http://java.sun.com/xml/ns/javaee http://jboss.org/schema/cdi/beans_1_0.xsd">
    
-<!--
-   <security:Identity>   
+   <security:Identity>
       <s:modifies/>
-      <security:authenticatorClass>de.urb.timesheet.web.admin.security.DatabaseAuthenticator</security:authenticatorClass>
+      <security:authenticatorClass>org.jboss.seam.security.management.IdmAuthenticator</security:authenticatorClass>
    </security:Identity>
--->
-      
-      <!-- 
-    <interceptors>
-    	<class></class>
-    </interceptors>
-    -->
+
+   <plidm:JpaIdentityStoreConfiguration>
+      <s:replaces/>
+      <plidm:identityClass>de.urb.sipbook.ejb.model.IdentityObject</plidm:identityClass>
+      <plidm:credentialClass>de.urb.sipbook.ejb.model.IdentityObjectCredential</plidm:credentialClass>
+      <plidm:relationshipClass>de.urb.sipbook.ejb.model.IdentityObjectRelationship</plidm:relationshipClass>
+      <plidm:roleTypeClass>de.urb.sipbook.ejb.model.IdentityRoleName</plidm:roleTypeClass>
+      <plidm:attributeClass>de.urb.sipbook.ejb.model.IdentityObjectAttribute</plidm:attributeClass>
+   </plidm:JpaIdentityStoreConfiguration>
+   
+   <interceptors>
+      <class>org.jboss.seam.security.SecurityInterceptor</class>
+   </interceptors>
 </beans>

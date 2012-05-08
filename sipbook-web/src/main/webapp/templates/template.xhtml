@@ -31,7 +31,7 @@
 			<c:if test="#{!userInfo.loggedIn}">
 				<h:form id="loginForm">
 					<div>
-						<h:outputLabel for="name" value="#{pageProps.login_username}:"
+						<h:outputLabel for="name" value="#{msgs.template_login_username}:"
 							styleClass="login_label" />
 						<h:inputText id="name" required="true" maxLength="32" size="32"
 							autocomplete="off" value="#{credentials.username}" />
@@ -40,7 +40,7 @@
 						</c:if>
 					</div>
 					<div>
-						<h:outputLabel for="password" value="#{pageProps.login_password}:"
+						<h:outputLabel for="password" value="#{msgs.template_login_password}:"
 							styleClass="login_label" />
 						<h:inputSecret id="password" maxLength="32" size="32"
 							autocomplete="off" required="true"
@@ -51,7 +51,7 @@
 						</c:if>
 					</div>
 					<div>
-						<h:commandButton id="login" value="#{pageProps.login_action}"
+						<h:commandButton id="login" value="#{msgs.template_login_action}"
 							action="#{identity.login}" styleClass="login_button" />
 					</div>
 				</h:form>

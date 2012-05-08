@@ -3,7 +3,6 @@
 <faces-config version="2.0" xmlns="http://java.sun.com/xml/ns/javaee" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="
       http://java.sun.com/xml/ns/javaee
       http://java.sun.com/xml/ns/javaee/web-facesconfig_2_0.xsd">
-<!--
    <application>
       <message-bundle>ValidationMessages</message-bundle>
       <locale-config>
@@ -11,15 +10,16 @@
          <supported-locale>en</supported-locale>
       </locale-config>
       <resource-bundle>
-         <base-name>de.urb.timesheet.web.admin.messages</base-name>
+         <base-name>de.urb.sipbook.web.messages</base-name>
          <var>msgs</var>
       </resource-bundle>
       <resource-bundle>
-         <base-name>de.urb.timesheet.web.admin.validator_messages</base-name>
+         <base-name>de.urb.sipbook.web.validator_messages</base-name>
          <var>vmsgs</var>
       </resource-bundle>
    </application>
-
+   
+<!--
    <navigation-rule>
       <from-view-id>/security/login.xhtml</from-view-id>
       <navigation-case>
