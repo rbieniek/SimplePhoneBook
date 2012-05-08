@@ -1,0 +1,111 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+  <parent>
+    <groupId>de.urb.sipbook</groupId>
+    <artifactId>sipbook-project</artifactId>
+    <version>${version.de.urb.sipbook}</version>
+  </parent>
+  <modelVersion>4.0.0</modelVersion>
+  <groupId>de.urb.sipbook</groupId>
+  <artifactId>sipbook-sip</artifactId>
+  <packaging>war</packaging>
+  <version>${version.de.urb.sipbook}</version>
+  <name>SIPBook SIP Servletapplication</name>
+  <description>SIPBook web application</description>
+
+  <build>
+    <plugins>
+      <plugin>
+	<groupId>org.apache.maven.plugins</groupId>
+	<artifactId>maven-war-plugin</artifactId>
+	<configuration>
+	  <failOnMissingWebXml>false</failOnMissingWebXml>
+	  <archive>
+            <manifestEntries>
+              <Dependencies>org.hibernate,org.jboss.vfs,org.joda.time,org.mobicents.as7,org.mobicents.libs,org.slf4j.ext,org.jboss.weld.servlet</Dependencies>
+            </manifestEntries>
+          </archive>
+	</configuration>	
+      </plugin>
+    </plugins>
+  </build>
+
+  <dependencies>
+
+    <dependency>
+      <groupId>org.apache.commons</groupId>
+      <artifactId>commons-lang3</artifactId>
+      <scope>provided</scope>
+    </dependency>
+
+
+    <dependency>
+      <groupId>de.urb.sipbook</groupId>
+      <artifactId>sipbook-lib</artifactId>
+      <version>${version.de.urb.sipbook}</version>
+      <scope>provided</scope>
+    </dependency>
+
+    <dependency>
+      <groupId>de.urb.sipbook</groupId>
+      <artifactId>sipbook-ejb</artifactId>
+      <version>${version.de.urb.sipbook}</version>
+      <type>ejb-client</type>
+    </dependency>
+
+    <dependency>
+      <groupId>org.jboss</groupId>
+      <artifactId>jboss-vfs</artifactId>
+      <scope>provided</scope>
+    </dependency>
+
+    <dependency>
+      <groupId>org.jboss.weld.servlet</groupId>
+      <artifactId>weld-servlet-core</artifactId>
+      <scope>provided</scope>
+    </dependency>
+
+    <dependency>
+      <groupId>org.mobicents.servlet.sip.ctf.core</groupId>
+      <artifactId>ctf-core</artifactId>
+    </dependency>      
+
+    <dependency>
+      <groupId>javax</groupId>
+      <artifactId>javaee-web-api</artifactId>
+      <version>6.0</version>
+      <scope>provided</scope>
+    </dependency>
+        
+    <dependency>
+      <groupId>javax.enterprise</groupId>
+      <artifactId>cdi-api</artifactId>
+      <scope>provided</scope>
+    </dependency>
+
+    <dependency>
+      <groupId>org.jboss.spec.javax.annotation</groupId>
+      <artifactId>jboss-annotations-api_1.1_spec</artifactId>
+      <scope>provided</scope>
+    </dependency>
+    
+  </dependencies>
+
+</project>
+<!-- Keep this comment at the end of the file
+Local variables:
+mode: xml
+sgml-omittag:nil
+sgml-shorttag:nil
+sgml-namecase-general:nil
+sgml-general-insert-case:lower
+sgml-minimize-attributes:nil
+sgml-always-quote-attributes:t
+sgml-indent-step:2
+sgml-indent-data:t
+sgml-parent-document:nil
+sgml-exposed-tags:nil
+sgml-local-catalogs:nil
+sgml-local-ecat-files:nil
+End:
+-->
