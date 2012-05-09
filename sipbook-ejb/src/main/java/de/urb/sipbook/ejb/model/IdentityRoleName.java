@@ -11,6 +11,8 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 import javax.persistence.Table;
 
+import org.jboss.seam.security.annotations.management.EntityType;
+import org.jboss.seam.security.annotations.management.IdentityEntity;
 import org.jboss.seam.security.annotations.management.IdentityProperty;
 import org.jboss.seam.security.annotations.management.PropertyType;
 
@@ -20,6 +22,7 @@ import org.jboss.seam.security.annotations.management.PropertyType;
  */
 @Entity
 @Table(name="IDENTITY_ROLE_NAME")
+@IdentityEntity(EntityType.IDENTITY_ROLE_NAME)
 public class IdentityRoleName implements  Serializable {
 
 	/**

@@ -13,6 +13,8 @@ import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
 import javax.persistence.Table;
 
+import org.jboss.seam.security.annotations.management.EntityType;
+import org.jboss.seam.security.annotations.management.IdentityEntity;
 import org.jboss.seam.security.annotations.management.IdentityProperty;
 import org.jboss.seam.security.annotations.management.PropertyType;
 
@@ -22,6 +24,7 @@ import org.jboss.seam.security.annotations.management.PropertyType;
  */
 @Entity
 @Table(name="IDENTITY_OBJECT_ATTRIBUTE")
+@IdentityEntity(EntityType.IDENTITY_ATTRIBUTE)
 public class IdentityObjectAttribute implements Serializable {
 	
 	/**
@@ -32,7 +35,7 @@ public class IdentityObjectAttribute implements Serializable {
 	@Id @GeneratedValue @Column(name="ID") private Long id;
 	@ManyToOne @JoinColumn(name="IDENTITY_OBJECT_ID") private IdentityObject identityObject;
 	@IdentityProperty(PropertyType.NAME) @Column(name="NAME") private String name;
-	@IdentityProperty(PropertyType.NAME) @Column(name="VALUE") private String value;
+	@IdentityProperty(PropertyType.VALUE) @Column(name="VALUE") private String value;
 	
 	public IdentityObject getIdentityObject() {
 		return identityObject;

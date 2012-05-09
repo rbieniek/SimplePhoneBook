@@ -11,11 +11,14 @@ import javax.persistence.ManyToOne;
 import javax.persistence.OneToOne;
 import javax.persistence.Table;
 
+import org.jboss.seam.security.annotations.management.EntityType;
+import org.jboss.seam.security.annotations.management.IdentityEntity;
 import org.jboss.seam.security.annotations.management.IdentityProperty;
 import org.jboss.seam.security.annotations.management.PropertyType;
 
 @Entity
 @Table(name="IDENTITY_OBJECT_CREDENTIAL")
+@IdentityEntity(EntityType.IDENTITY_CREDENTIAL)
 public class IdentityObjectCredential implements Serializable {
 
 	/**

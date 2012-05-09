@@ -31,7 +31,8 @@
             <clientExclude>**/*Session.class</clientExclude>
             <clientExclude>**/*CMP.class</clientExclude>
             <clientExclude>**/package.html</clientExclude>
-            <clientExclude>META-INF/*.xml</clientExclude>
+            <clientExclude>META-INF/persistence.xml</clientExclude>
+            <clientExclude>META-INF/ejb-jar.xml</clientExclude>
 	  </clientExcludes>
         </configuration>
       </plugin>

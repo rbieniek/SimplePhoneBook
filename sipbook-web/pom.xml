@@ -20,13 +20,11 @@
 	<artifactId>maven-war-plugin</artifactId>
 	<configuration>
 	  <failOnMissingWebXml>false</failOnMissingWebXml>
-<!--
 	  <archive>
             <manifestEntries>
-              <Dependencies>org.hibernate,org.jboss.vfs,org.joda.time,org.mobicents.as7,org.mobicents.libs,org.slf4j.ext,org.jboss.weld.servlet</Dependencies>
+              <Dependencies>org.jboss.resteasy.resteasy-jaxrs</Dependencies>
             </manifestEntries>
           </archive>
--->
 	</configuration>	
       </plugin>
     </plugins>
