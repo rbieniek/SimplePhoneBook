@@ -55,7 +55,6 @@
       <groupId>de.urb.sipbook</groupId>
       <artifactId>sipbook-ejb</artifactId>
       <version>${version.de.urb.sipbook}</version>
-      <!-- type>ejb-client</type -->
       <scope>provided</scope>
     </dependency>
 
@@ -75,8 +74,8 @@
     </dependency>
 
     <dependency>
-      <groupId>org.jboss</groupId>
-      <artifactId>jboss-vfs</artifactId>
+      <groupId>org.jboss.logging</groupId>
+      <artifactId>jboss-logging</artifactId>
       <scope>provided</scope>
     </dependency>
 
@@ -153,7 +152,7 @@
     <dependency>
       <groupId>org.jboss.seam.security</groupId>
       <artifactId>seam-security</artifactId>
-      <scope>runtime</scope>
+      <scope>compile</scope>
     </dependency>
 
     <dependency>

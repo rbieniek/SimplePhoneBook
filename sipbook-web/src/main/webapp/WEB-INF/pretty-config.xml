@@ -8,4 +8,9 @@
     <view-id value="/admin/index.xhtml" />
   </url-mapping>
 
+  <url-mapping id="main"> 
+    <pattern value="/" /> 
+    <view-id value="/index.xhtml" />
+  </url-mapping>
+
 </pretty-config>

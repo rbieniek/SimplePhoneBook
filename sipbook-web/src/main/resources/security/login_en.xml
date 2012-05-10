@@ -1,6 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE properties SYSTEM "http://java.sun.com/dtd/properties.dtd">
 <properties>
+  <entry key="title">Login</entry>
+  <entry key="headline">log into the system</entry>
     <entry key="login_username">Username</entry>
     <entry key="login_password">Password</entry>
     <entry key="login_action">Login</entry>    

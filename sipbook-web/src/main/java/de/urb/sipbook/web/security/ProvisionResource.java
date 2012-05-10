@@ -1,7 +1,7 @@
 /**
  * 
  */
-package de.urb.sipbook.web.idm;
+package de.urb.sipbook.web.security;
 
 import javax.inject.Inject;
 import javax.ws.rs.GET;
@@ -12,8 +12,6 @@ import javax.xml.bind.annotation.XmlAccessorType;
 import javax.xml.bind.annotation.XmlRootElement;
 
 import org.jboss.solder.logging.Logger;
-import org.picketlink.idm.api.IdentitySession;
-import org.picketlink.idm.api.PersistenceManager;
 
 /**
  * @author rainer
@@ -47,7 +45,6 @@ public class ProvisionResource {
 		
 	}
 
-	@Inject private IdentitySession identitySession;
 	@Inject private Logger log;
 
 	@GET
@@ -57,16 +54,6 @@ public class ProvisionResource {
 		ProvisionAdminResult result = new ProvisionAdminResult();
 		
 		try {
-			PersistenceManager pm = identitySession.getPersistenceManager();
-			
-			if(pm.findUser(pm.createIdentitySearchCriteria().nameFilter("admin")).isEmpty()) {
-				log.info("need to create admin user");
-				
-			} else {
-				log.info("admin user already exists");
-				
-				result.setExists(true);
-			}
 		} catch(Exception e) {
 			log.error("failed to provision admin", e);
 		}

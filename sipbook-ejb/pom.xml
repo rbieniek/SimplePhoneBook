@@ -24,22 +24,19 @@
         <groupId>org.apache.maven.plugins</groupId>
         <artifactId>maven-ejb-plugin</artifactId>
         <configuration>
-	  <generateClient>true</generateClient>
+	  <generateClient>false</generateClient>
 	  <ejbVersion>3.1</ejbVersion>
-	  <clientExcludes>
-            <clientExclude>**/*Bean.class</clientExclude>
-            <clientExclude>**/*Session.class</clientExclude>
-            <clientExclude>**/*CMP.class</clientExclude>
-            <clientExclude>**/package.html</clientExclude>
-            <clientExclude>META-INF/persistence.xml</clientExclude>
-            <clientExclude>META-INF/ejb-jar.xml</clientExclude>
-	  </clientExcludes>
         </configuration>
       </plugin>
       <plugin>
         <artifactId>maven-surefire-plugin</artifactId>
         <configuration>
           <skip>true</skip>
+	  <archive>
+            <manifestEntries>
+              <Dependencies>org.jboss.logging</Dependencies>
+            </manifestEntries>
+          </archive>
         </configuration>
       </plugin>
     </plugins>
@@ -90,8 +87,8 @@
     </dependency>
         
     <dependency>
-      <groupId>org.jboss.seam.security</groupId>
-      <artifactId>seam-security-api</artifactId>
+      <groupId>org.jboss.logging</groupId>
+      <artifactId>jboss-logging</artifactId>
       <scope>provided</scope>
     </dependency>
 

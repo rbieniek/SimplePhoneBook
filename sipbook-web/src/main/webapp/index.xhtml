@@ -7,11 +7,11 @@
 
   <h:body>
     <ui:composition template="/templates/template.xhtml">
-      <ui:define name="title">Index</ui:define>
-      <ui:define name="headline">Overview</ui:define>
+      <ui:define name="title">#{pageProps.title}</ui:define>
+      <ui:define name="headline">#{pageProps.headline}</ui:define>
 
       <ui:define name="content">
-        <h:outputText value="You are in the main content section"/>
+		<h:link outcome="/security/login.xhtml" value="#{pageProps.login}"/>
       </ui:define>
     </ui:composition>
   </h:body>

@@ -61,7 +61,11 @@ public class PerPageResourceBundle extends ResourceBundle {
 
 			pageResourceBundles.get(viewId).put(locale, props);
 
-			String propFileName = viewId;			
+			String propFileName = viewId;
+			
+			if(StringUtils.startsWith(propFileName, "/"))
+				propFileName = StringUtils.substring(propFileName, 1);
+			
 			int dotIdx = StringUtils.lastIndexOf(propFileName, ".");
 			
 			if(dotIdx > 0) {
@@ -72,7 +76,7 @@ public class PerPageResourceBundle extends ResourceBundle {
 					loadProperties(props, propFileName, locale.getCountry(), locale.getLanguage());
 			}
 		}
-				
+		
 		return pageResourceBundles.get(viewId).get(locale);
 	}
 	

@@ -23,19 +23,10 @@
         <configuration>
           <defaultLibBundleDir>lib</defaultLibBundleDir>
           <modules>
-
             <jarModule>
               <groupId>commons-codec</groupId>
               <artifactId>commons-codec</artifactId>
             </jarModule>
-
-<!--
-            <jarModule>
-              <groupId>commons-io</groupId>
-              <artifactId>commons-io</artifactId>
-              <includeInApplicationXml>true</includeInApplicationXml>
-            </jarModule>
--->
 
             <jarModule>
 	      <groupId>org.apache.commons</groupId>
@@ -46,7 +37,6 @@
 	      <groupId>de.urb.sipbook</groupId>
 	      <artifactId>sipbook-lib</artifactId>
             </jarModule>
-
 
             <ejbModule>
 	      <groupId>de.urb.sipbook</groupId>
