@@ -166,6 +166,7 @@
   <modules>
     <module>sipbook-lib</module>
     <module>sipbook-ejb</module>
+    <module>sipbook-idm-ejb</module>
     <module>sipbook-web</module>
     <module>sipbook-sip</module>
     <module>sipbook-ear</module>

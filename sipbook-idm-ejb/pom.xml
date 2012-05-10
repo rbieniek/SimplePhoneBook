@@ -12,11 +12,11 @@
 
   <modelVersion>4.0.0</modelVersion>
   <groupId>de.urb.sipbook</groupId>
-  <artifactId>sipbook-ejb</artifactId>
+  <artifactId>sipbook-idm-ejb</artifactId>
   <packaging>ejb</packaging>
   <version>${version.de.urb.sipbook}</version>
-  <name>SIPBook simple EJBs</name>
-  <description>SIPBook simple EJBs</description>
+  <name>SIPBook IDM EJBs</name>
+  <description>SIPBook IDM EJBs</description>
 
   <build>
     <plugins>
