@@ -61,6 +61,8 @@ public class PerPageResourceBundle extends ResourceBundle {
 
 			pageResourceBundles.get(viewId).put(locale, props);
 
+			logger.infof("loading resources for view %s", viewId);
+			
 			String propFileName = viewId;
 			
 			if(StringUtils.startsWith(propFileName, "/"))
@@ -83,13 +85,22 @@ public class PerPageResourceBundle extends ResourceBundle {
 	private boolean loadXmlProperties(Properties props, String fileBaseName, String country, String language) {
 		boolean loaded = false;
 		InputStream is;
-		
-		is = getClass().getClassLoader().getResourceAsStream(fileBaseName  + "_" + language + "_" + country+ ".xml");
+		String resourceName = fileBaseName  + "_" + language + "_" + country+ ".xml";
+				
+		logger.infof("loading resource: %s", resourceName);
+		is = getClass().getClassLoader().getResourceAsStream(resourceName);
 		if(is == null) {
-			is = getClass().getClassLoader().getResourceAsStream(fileBaseName + "_" + language + ".xml");
+			resourceName = fileBaseName + "_" + language + ".xml";
+			
+			logger.infof("loading resource: %s", resourceName);
+			is = getClass().getClassLoader().getResourceAsStream(resourceName);
 
-			if(is == null)
-				is = getClass().getClassLoader().getResourceAsStream(fileBaseName + ".xml");
+			if(is == null) {
+				resourceName = fileBaseName + ".xml";
+				
+				logger.infof("loading resource: %s", resourceName);
+				is = getClass().getClassLoader().getResourceAsStream(resourceName);
+			}
 		}
 
 		if(is != null) {
@@ -97,33 +108,46 @@ public class PerPageResourceBundle extends ResourceBundle {
 				props.loadFromXML(is);
 				loaded = true;
 			} catch(Exception e) {
-				logger.errorf(e, "failed to loa properties for base name: {0}", fileBaseName);
+				logger.errorf(e, "failed to load properties for base name: %s", fileBaseName);
 				
 				throw new RuntimeException(e);
 			}
+		} else {
+			logger.infof("failed to load XML properties for %s", fileBaseName);
 		}
 		return loaded;
 	}
 	
 	private void loadProperties(Properties props, String fileBaseName, String country, String language) {
 		InputStream is;
+		String resourceName = fileBaseName + "_" + language + "_" + country + ".properties";
 		
-		is = getClass().getClassLoader().getResourceAsStream(fileBaseName + "_" + language + "_" + country + ".properties");
+		logger.infof("loading resource: %s", resourceName);
+		is = getClass().getClassLoader().getResourceAsStream(resourceName);
 		if(is == null) {
-			is = getClass().getClassLoader().getResourceAsStream(fileBaseName + "_" + language + ".properties");
+			resourceName = fileBaseName + "_" + language + ".properties";
+			
+			logger.infof("loading resource: %s", resourceName);
+			is = getClass().getClassLoader().getResourceAsStream(resourceName);
 
-			if(is == null)
-				is = getClass().getClassLoader().getResourceAsStream(fileBaseName + ".properties");
+			if(is == null) {
+				resourceName = fileBaseName + ".properties";
+				
+				logger.infof("loading resource: %s", resourceName);
+				is = getClass().getClassLoader().getResourceAsStream(resourceName);
+			}
 		}
 
 		if(is != null) {
 			try {
 				props.load(is);
 			} catch(Exception e) {
-				logger.errorf(e, "failed to loa properties for base name: {0}", fileBaseName);
+				logger.errorf(e, "failed to loa properties for base name: %s", fileBaseName);
 				
 				throw new RuntimeException(e);
 			}
+		} else {
+			logger.infof("failed to load XML properties for %s", fileBaseName);
 		}
 	}
 
