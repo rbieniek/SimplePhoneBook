@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE properties SYSTEM "http://java.sun.com/dtd/properties.dtd">
+<properties>
+  <entry key="title">Übersicht</entry>
+  <entry key="headline">Hauptseite</entry>
+  <entry key="login">Bitte dem Link zum Einloggen folgen</entry>
+</properties>
