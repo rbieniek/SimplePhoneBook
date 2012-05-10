@@ -60,12 +60,6 @@
     </dependency>
 
     <dependency>
-      <groupId>de.urb.sipbook</groupId>
-      <artifactId>sipbook-idm-ejb</artifactId>
-      <version>${version.de.urb.sipbook}</version>
-    </dependency>
-
-    <dependency>
       <groupId>org.drools</groupId>
       <artifactId>drools-core</artifactId>
     </dependency>
