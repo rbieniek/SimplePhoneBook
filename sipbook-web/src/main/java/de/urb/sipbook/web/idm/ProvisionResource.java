@@ -20,7 +20,7 @@ import org.picketlink.idm.api.PersistenceManager;
  *
  */
 @Path("/provision")
-public class AdminUserSeeder {
+public class ProvisionResource {
 
 	@XmlRootElement(name="ProvisionAdminResult")
 	@XmlAccessorType(XmlAccessType.FIELD)

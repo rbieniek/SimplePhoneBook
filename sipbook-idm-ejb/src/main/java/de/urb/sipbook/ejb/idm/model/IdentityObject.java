@@ -1,7 +1,7 @@
 /**
  * 
  */
-package de.urb.sipbook.ejb.model;
+package de.urb.sipbook.ejb.idm.model;
 
 import java.io.Serializable;
 
@@ -23,45 +23,37 @@ import org.jboss.seam.security.annotations.management.PropertyType;
  *
  */
 @Entity
-@Table(name="IDENTITY_OBJECT_ATTRIBUTE")
-@IdentityEntity(EntityType.IDENTITY_ATTRIBUTE)
-public class IdentityObjectAttribute implements Serializable {
+@Table(name="IDENTITY_OBJECT")
+@IdentityEntity(EntityType.IDENTITY_OBJECT)
+public class IdentityObject implements Serializable {
 	
 	/**
 	 * 
 	 */
-	private static final long serialVersionUID = 3082425853427811797L;
-	
+	private static final long serialVersionUID = 8149761429242660793L;
+
 	@Id @GeneratedValue @Column(name="ID") private Long id;
-	@ManyToOne @JoinColumn(name="IDENTITY_OBJECT_ID") private IdentityObject identityObject;
 	@IdentityProperty(PropertyType.NAME) @Column(name="NAME") private String name;
-	@IdentityProperty(PropertyType.VALUE) @Column(name="VALUE") private String value;
-	
-	public IdentityObject getIdentityObject() {
-		return identityObject;
-	}
-	
-	public void setIdentityObject(IdentityObject identityObject) {
-		this.identityObject = identityObject;
-	}
-	
+	@ManyToOne @JoinColumn(name="IDENTITY_OBJECT_TYPE_ID") @IdentityProperty(PropertyType.TYPE) private IdentityObjectType  type;
+
 	public String getName() {
 		return name;
 	}
-	
+
 	public void setName(String name) {
 		this.name = name;
 	}
-	
-	public String getValue() {
-		return value;
+
+	public IdentityObjectType getType() {
+		return type;
 	}
-	
-	public void setValue(String value) {
-		this.value = value;
+
+	public void setType(IdentityObjectType type) {
+		this.type = type;
 	}
-	
+
 	public Long getId() {
 		return id;
 	}
+	
 }

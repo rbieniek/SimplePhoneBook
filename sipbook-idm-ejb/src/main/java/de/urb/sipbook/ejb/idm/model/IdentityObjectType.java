@@ -1,7 +1,7 @@
 /**
  * 
  */
-package de.urb.sipbook.ejb.model;
+package de.urb.sipbook.ejb.idm.model;
 
 import java.io.Serializable;
 
@@ -19,8 +19,8 @@ import org.jboss.seam.security.annotations.management.PropertyType;
  *
  */
 @Entity
-@Table(name="IDENTITY_OBJECT_RRELATIONSHIP_TYPE")
-public class IdentityObjectRelationshipType implements Serializable {
+@Table(name="IDENTITY_OBJECT_TYPE")
+public class IdentityObjectType implements Serializable {
 
 	/**
 	 * 

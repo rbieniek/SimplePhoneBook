@@ -1,4 +1,4 @@
-package de.urb.sipbook.ejb.model;
+package de.urb.sipbook.ejb.idm.model;
 
 import java.io.Serializable;
 
